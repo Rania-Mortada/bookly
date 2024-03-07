@@ -1,8 +1,9 @@
 
+import 'package:bookly/Features/Splash/Presentation/Viws/Widget/constss.dart';
 import 'package:bookly/core/utils/assas.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:get/get.dart';
+import '../../../../home/data/Presentation/Viwe_models/Viwe/home_view.dart';
 class SplachViwBody extends StatefulWidget {
   const SplachViwBody({Key? key}) : super(key: key);
 
@@ -16,8 +17,9 @@ class _SplachViwBodyState extends State<SplachViwBody> with SingleTickerProvider
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    navigataHome();
+
     animationController =AnimationController(
         vsync: this,duration: Duration(seconds: 5),);
     slidingAnimation = Tween<Offset>(begin:Offset(0, 10) , end: Offset.zero )
@@ -50,5 +52,17 @@ class _SplachViwBodyState extends State<SplachViwBody> with SingleTickerProvider
 
     );
   }
+}
+
+void navigataHome (){
+  Future.delayed(Duration(seconds: 2),
+          (){
+        Get.to(()=>const HomeView(),
+            transition: Transition.fade,duration: kTranstionDuration);
+
+
+      }
+  );
+
 }
 
