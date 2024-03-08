@@ -55,7 +55,7 @@ class _SplachViwBodyState extends State<SplachViwBody> with SingleTickerProvider
 }
 
 void navigataHome (){
-  Future.delayed(Duration(seconds: 2),
+  Future.delayed(Duration(seconds: 7),
           (){
         Get.to(()=>const HomeView(),
             transition: Transition.fade,duration: kTranstionDuration);
