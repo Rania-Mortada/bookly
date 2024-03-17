@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'Features/Splash/Presentation/Viws/SplachViw.dart';
 import 'Features/Splash/Presentation/Viws/Widget/constss.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'core/utils/AppRoute.dart';
 
 
 void main() {
@@ -15,13 +14,15 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+      return MaterialApp.router(
+        routerConfig: AppRoute.router,
+
       theme: ThemeData.dark().copyWith(
          scaffoldBackgroundColor:  kPrimreColro,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
 
       ),
-      home: SplachViw(),
+
       debugShowCheckedModeBanner: false,
     );
 

@@ -1,9 +1,9 @@
 
-import 'package:bookly/Features/Splash/Presentation/Viws/Widget/constss.dart';
+import 'dart:js';
+import 'package:bookly/core/utils/AppRoute.dart';
 import 'package:bookly/core/utils/assas.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../../../home/data/Presentation/Viwe_models/Viwe/home_view.dart';
+import 'package:go_router/go_router.dart';
 class SplachViwBody extends StatefulWidget {
   const SplachViwBody({Key? key}) : super(key: key);
 
@@ -18,7 +18,7 @@ class _SplachViwBodyState extends State<SplachViwBody> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
-    navigataHome();
+
 
     animationController =AnimationController(
         vsync: this,duration: Duration(seconds: 5),);
@@ -53,16 +53,17 @@ class _SplachViwBodyState extends State<SplachViwBody> with SingleTickerProvider
     );
   }
 }
-
 void navigataHome (){
-  Future.delayed(Duration(seconds: 7),
-          (){
-        Get.to(()=>const HomeView(),
-            transition: Transition.fade,duration: kTranstionDuration);
+  Future.delayed(
+    const Duration(seconds: 7),
+        (){
+
+      GoRouter.of(context).push(AppRoute.kHomeViwe);
 
 
-      }
+    },
   );
 
 }
+
 
